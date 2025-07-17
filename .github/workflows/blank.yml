@@ -6,14 +6,14 @@ on:
       env:
         description: "Chọn môi trường triển khai"
         required: true
+        type: string
         default: "staging"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout mã nguồn
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: In môi trường được chọn
         run: echo "Triển khai đến môi trường: ${{ github.event.inputs.env }}"
