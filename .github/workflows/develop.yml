@@ -1,0 +1,21 @@
+name: Deploy App
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "Chọn môi trường triển khai"
+        required: true
+        default: "staging"
+        type: choice
+        options:
+          - dev
+          - staging
+          - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: In môi trường được chọn
+        run: echo "Triển khai đến ${{ github.event.inputs.env }}"
