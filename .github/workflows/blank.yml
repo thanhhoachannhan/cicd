@@ -7,11 +7,6 @@ on:
         description: "Chọn môi trường triển khai"
         required: true
         default: "staging"
-        type: choice
-        options:
-          - dev
-          - staging
-          - production
 
 jobs:
   deploy:
